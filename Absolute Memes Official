@@ -1,0 +1,66 @@
+export default function AbsoluteMemesWebsite() { const memes = [ { title: 'Relatable School Meme', img: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop' }, { title: 'Gaming Rage Meme', img: 'https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop' }, { title: 'Funny Cat Meme', img: 'https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=1200&auto=format&fit=crop' } ];
+
+return ( <div className="min-h-screen bg-black text-white font-sans"> {/* Navbar */} <nav className="flex items-center justify-between px-6 py-4 border-b border-gray-800 sticky top-0 bg-black/90 backdrop-blur z-50"> <h1 className="text-2xl font-bold text-yellow-400">Absolute Memes</h1> <div className="flex gap-4 text-sm md:text-base"> <a href="#memes" className="hover:text-yellow-400 transition">Memes</a> <a href="#about" className="hover:text-yellow-400 transition">About</a> <a href="#contact" className="hover:text-yellow-400 transition">Contact</a> </div> </nav>
+
+{/* Hero */}
+  <section className="text-center px-6 py-20 bg-gradient-to-b from-yellow-500/20 to-transparent">
+    <h2 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+      India’s Funniest <span className="text-yellow-400">Meme Hub</span>
+    </h2>
+    <p className="text-gray-300 max-w-2xl mx-auto text-lg md:text-xl">
+      Daily viral memes, trending jokes, gaming fun, and relatable content — all in one place.
+    </p>
+
+    <div className="mt-8 flex justify-center gap-4 flex-wrap">
+      <button className="bg-yellow-400 text-black px-6 py-3 rounded-2xl font-bold hover:scale-105 transition">
+        Explore Memes
+      </button>
+      <button className="border border-yellow-400 px-6 py-3 rounded-2xl hover:bg-yellow-400 hover:text-black transition">
+        Upload Meme
+      </button>
+    </div>
+  </section>
+
+  {/* Meme Cards */}
+  <section id="memes" className="px-6 py-16">
+    <h3 className="text-4xl font-bold mb-10 text-center text-yellow-400">Trending Memes</h3>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {memes.map((meme, index) => (
+        <div
+          key={index}
+          className="bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+        >
+          <img
+            src={meme.img}
+            alt={meme.title}
+            className="w-full h-64 object-cover"
+          />
+          <div className="p-5">
+            <h4 className="text-xl font-bold mb-2">{meme.title}</h4>
+            <p className="text-gray-400 text-sm">
+              Viral meme content updated daily for entertainment.
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* About */}
+  <section id="about" className="px-6 py-20 bg-gray-950 text-center">
+    <h3 className="text-4xl font-bold text-yellow-400 mb-6">About Absolute Memes</h3>
+    <p className="max-w-3xl mx-auto text-gray-300 text-lg leading-8">
+      Absolute Memes is a modern meme platform where users can enjoy trending memes,
+      funny videos, gaming jokes, and relatable content. Designed for meme lovers with
+      a clean and premium UI.
+    </p>
+  </section>
+
+  {/* Footer */}
+  <footer id="contact" className="border-t border-gray-800 py-8 text-center text-gray-500 text-sm">
+    © 2026 Absolute Memes • Made with ❤️ in India
+  </footer>
+</div>
+
+); }
